@@ -6,7 +6,7 @@ import joblib
 
 app = FastAPI()
 
-model = joblib.load("model/house.joblib")
+model = joblib.load("model/random_house.joblib")
 
 @app.get("/")
 def health_check():
