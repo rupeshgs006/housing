@@ -186,7 +186,6 @@ Aspiring ML / AI Engineer
 
 ⭐ If you find this project useful, give it a star!
 
-```
 
----
+
 
