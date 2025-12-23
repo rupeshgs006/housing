@@ -24,18 +24,33 @@ preprocessor = ColumnTransformer(
     ]
 )
 
-model = Pipeline(
+model1 = Pipeline(
     steps=[
         ("preprocessing",preprocessor),
         ("regressor",LinearRegression())
     ]
 )
 
+model2 = Pipeline(
+    steps=[
+        ("preprocessing",preprocessor),
+        ("regressor",RandomForestRegressor(
+            n_estimators=300,
+            random_state=42,
+            n_jobs=1
+        ))
+    ]
+)
+
 X=data.drop("price",axis=1)
 y=data["price"]
 
-model.fit(X,y)
-preds = model.predict(X)
-print("R2 Score:",r2_score(y,preds))
-joblib.dump(model,"model/house.joblib")
+model1.fit(X,y)
+model2.fit(X,y)
+preds1 = model1.predict(X)
+preds2 = model2.predict(X)
+print("R2 Score:",r2_score(y,preds1))
+print("R2 Score:",r2_score(y,preds2))
+joblib.dump(model1,"model/house.joblib")
+joblib.dump(model1,"mode2/random_house.joblib")
 print("pipline saved")
