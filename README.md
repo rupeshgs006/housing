@@ -51,7 +51,7 @@ Given house-related features such as area, number of rooms, amenities, and furni
 - **Numerical features** → StandardScaler  
 - **Binary categorical features** → One-hot encoding  
 - **Multi-class categorical features** → One-hot encoding  
-- **Model** → Linear Regression  
+- **Model** → Linear Regression  or Random Forest Regressor
 
 All steps are combined using a **single sklearn Pipeline** to ensure:
 - No data leakage
@@ -185,6 +185,7 @@ Aspiring ML / AI Engineer
 ---
 
 ⭐ If you find this project useful, give it a star!
+
 
 
 
